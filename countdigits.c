@@ -1,59 +1,22 @@
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
+#include<stdio.h>
+void main()
+{
 
-int main() {
-int a[10]={0,0,0,0,0,0,0,0,0},n;   
-char *s;
-   
-    s = malloc(1 * sizeof(char));
-    scanf("%[^\n]", s);
-    int j=strlen(s);
-
-    while(j)
+    int in,i,count=0,temp;
+    printf("Enter the number...\n");
+    scanf("%d",&in);
+    for(i=1;i<=in;i++)
     {
-        if((int)*s>=48&&(int)*s<=57)
-        switch((int)*s)
+        temp=i;
+        while(temp>0)
         {
-            case 48:
-            a[0]++;
-             break;
-            case 49:
-            a[1]++;
-             break;
-            case 50:
-            a[2]++;
-            break;
-            case 51:
-            a[3]++;
-             break;
-            case 52:
-            a[4]++;
-             break;
-            case 53:
-            a[5]++;
-             break;
-            case 54:
-            a[6]++;
-             break;
-            case 55:
-            a[7]++;
-             break;
-            case 56:
-            a[8]++;
-             break;
-            case 57:
-            a[9]++;
-             break;
-             default:
-             n++;
-        }
-        s++;
-     j--;
-    }
-    for(int i=0;i<10;i++)
-    printf("%d ",a[i]);
 
-    return 0;
+            temp=temp/10;
+            count++;
+            temp=temp%10;
+
+        }
+
+    }
+    printf("\n%d",count);
 }
